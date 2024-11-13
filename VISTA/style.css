@@ -1,0 +1,231 @@
+/* Elimina los márgenes y bordes predeterminados del body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Asegura que el padding y el borde no afecten el tamaño total */
+}
+
+/* Fondo con gradiente */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #d4ff5f, #7b7dfe);
+    height: 100vh;
+    /* Asegura que el body ocupe toda la altura de la ventana */
+    display: flex;
+    /* Usa Flexbox para colocar las columnas */
+    justify-content: center;
+    /* Centra las columnas horizontalmente */
+    align-items: flex-start;
+    /* Alinea las columnas al principio (no se estira hacia abajo) */
+    overflow: hidden;
+    /* Oculta las barras de desplazamiento */
+}
+
+/* Contenedor padre para las dos columnas */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+}
+
+/* Estilo para la columna izquierda con imagen de fondo */
+.izquierda {
+    flex: 0 0 69%;
+    /* La columna izquierda ocupará el 70% del ancho */
+    padding: 0;
+    /* Elimina el padding para asegurar que la imagen cubra todo */
+    display: flex;
+    /* Flexbox para centrar contenido si es necesario */
+    align-items: center;
+    /* Alinea el contenido verticalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    background-image: url('http://localhost/servicedesk/VISTA/img/gestionti3.jpg');
+    background-size: cover;
+    /* Asegura que la imagen cubra toda la columna */
+    background-position: center;
+    /* Centra la imagen dentro del contenedor */
+    height: 100vh;
+    /* Asegura que ocupe toda la altura de la ventana */
+}
+
+/* Estilo para la columna derecha */
+.derecha {
+    flex: 0 0 31%;
+    /* La columna derecha ocupará el 36% del ancho */
+    background-color: #ffffff;
+    padding: 50px;
+}
+
+/*ESTILOS PARA LAS SUBCOLUMNAS*/
+/* Estilo para las subcolumnas dentro de la columna derecha */
+.derecha .subcolumna {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye el contenido entre las dos subcolumnas */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho disponible */
+    margin-bottom: 0px;
+    /* Espacio entre las subcolumnas */
+    gap: 10px;
+    /* Controla el espacio entre la imagen y el texto */
+}
+
+/* Estilo para las subcolumnas izquierda y derecha dentro de la columna derecha */
+.derecha .subcolumna .izquierda-subcolumna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    /* Toma solo el ancho de la imagen */
+}
+
+.derecha .subcolumna .derecha-subcolumna {
+    flex: 1;
+    /* Ambas subcolumnas ocupan el mismo espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustar el tamaño de la imagen de la insignia */
+.derecha .subcolumna .izquierda-subcolumna img {
+    max-width: 40px;
+    /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    /* Mantiene la proporción */
+}
+
+/*PARA E INICIO DE SESIÓN*/
+/* Estilo para el formulario */
+form {
+    width: 100%;
+}
+
+/* Contenedor para cada par de label e input */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/*ingreso de usuaario y contraseña*/
+input[type="text"],
+input[type="password"] {
+    background-color: rgb(245, 242, 242);
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #e2dddd;
+}
+
+label {
+    width: 150px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* Estilo del botón de iniciar sesión */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    width: 100%;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px 2px rgba(0, 191, 255, 0.5);
+}
+
+button:active {
+    background-color: #003366;
+    box-shadow: 0 0 5px 2px rgba(0, 191, 255, 0.7);
+    transform: scale(0.98);
+}
+
+/*PARA LA PARTE DE RECORDAR CONTRASEÑA O OLVIDAR CONTRAÑESA*/
+.switch>input {
+    display: none;
+}
+
+.switch>label {
+    display: block;
+    position: relative;
+    background: #d1dae3;
+    width: 38px;
+    height: 19px;
+    border-radius: 20px;
+    border: 2px solid #cad3dc;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 10px rgba(0, 0, 0, 0.1),
+        inset -8px -8px 15px rgba(255, 255, 255, 0.5),
+        inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.switch>label:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+}
+
+.switch>input:checked+label {
+    background: #20a0ff;
+}
+
+.switch>input:checked+label:before {
+    left: 20px;
+}
+
+.texto-hola {
+    font-size: 11px;
+    /* Tamaño del texto */
+    color: #969493;
+    /* Color del texto */
+    font-weight: iti;
+    font-style: italic;
+    /* Cursiva */
+}
+
+/* Estilo para el enlace "Olvidé mi contraseña" */
+.forgot-password {
+    display: inline-block;
+    /* Asegura que el enlace se muestre en línea */
+    color: #007bff;
+    /* Color del texto en azul */
+    text-decoration: none;
+    /* Elimina el subrayado por defecto */
+    font-size: 11px;
+    /* Tamaño de fuente un poco más pequeño */
+    margin-top: 1px;
+    /* Espacio encima del enlace */
+}
+
+/* Efecto al pasar el mouse por encima */
+.forgot-password:hover {
+    text-decoration: underline;
+    /* Subraya el texto al pasar el ratón */
+}
